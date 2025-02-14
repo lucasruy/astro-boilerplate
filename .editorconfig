@@ -1,0 +1,28 @@
+# Define a raiz do EditorConfig para evitar heranças indesejadas
+root = true
+
+# Aplicação geral para todos os arquivos
+[*]
+indent_style = space  # Usa espaços ao invés de tabs
+indent_size = 2       # Define indentação de 2 espaços
+end_of_line = lf      # Usa line-ending padrão UNIX (LF)
+charset = utf-8       # Codificação padrão UTF-8
+trim_trailing_whitespace = true  # Remove espaços em branco desnecessários no final das linhas
+insert_final_newline = true  # Garante que sempre tenha uma linha vazia no final do arquivo
+
+# Configuração para arquivos TypeScript, JavaScript, JSON, YAML e Astro
+[*.{ts,tsx,js,jsx,json,yml,yaml,astro}]
+indent_size = 2  # Mantém padrão de 2 espaços para esses arquivos
+
+# Configuração específica para arquivos Markdown
+[*.md]
+trim_trailing_whitespace = false  # Permite espaços ao final das linhas (útil para Markdown)
+
+# Configuração para arquivos YAML (como GitHub Actions)
+[*.yaml]
+indent_size = 2  # Mantém a identação correta nos arquivos YAML
+
+# Configuração para arquivos de configuração como .editorconfig e .gitignore
+[*.{editorconfig,gitignore}]
+indent_style = space
+indent_size = 2

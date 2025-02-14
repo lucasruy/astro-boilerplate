@@ -1,0 +1,25 @@
+---
+import SimpleLayout from "../shared/layouts/SimpleLayout.astro";
+import { getAllPaths, getContent } from "../services/content/get-content.service";
+
+export async function getStaticPaths() {
+  return getAllPaths();
+}
+
+const { slug } = Astro.params;
+const slugPath = Array.isArray(slug) ? slug.join("/") : slug;
+
+const contentData = getContent(slugPath);
+
+if (!contentData) {
+  throw new Error(`Conteúdo não encontrado para /${slugPath}`);
+}
+---
+
+<SimpleLayout title={contentData.metadata.title}>
+  <article class="max-w-3xl mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-4">{contentData.metadata.title}</h1>
+    <p class="text-gray-400">{contentData.metadata.date}</p>
+    <div class="mt-4 text-lg" set:html={contentData.content}></div>
+  </article>
+</SimpleLayout>
