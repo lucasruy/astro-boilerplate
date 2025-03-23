@@ -1,0 +1,97 @@
+---
+import { SEO as AstroSEO } from 'astro-seo';
+import { ENV } from '../config/env';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  openGraph?: {
+    basic: {
+      title: string;
+      type: string;
+      image: string;
+    };
+    image: {
+      alt: string;
+      width: number;
+      height: number;
+      type: string;
+    };
+    optional: {
+      siteName: string;
+      description: string;
+    };
+  };
+  twitter?: any;
+  extend?: {
+    meta?: Array<Record<string, string>>;
+    link?: Array<Record<string, string>>;
+  };
+}
+
+const {
+  title = "Astro Boilerplate",
+  description = "Um boilerplate simples em Astro",
+  image = '/default-og-image.jpg',
+  imageAlt = 'OpenGraph imagem'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, ENV.SITE_URL).toString();
+const ogImage = new URL(image, ENV.SITE_URL).toString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description: description,
+  image: ogImage,
+  url: canonicalURL,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<AstroSEO
+  title={title}
+  description={description}
+  openGraph={{
+    basic: {
+      title: title,
+      type: 'website',
+      image: ogImage,
+    },
+    image: {
+      alt: imageAlt,
+      width: 1200,
+      height: 630,
+      type: 'image/webp',
+    },
+    optional: {
+      siteName: "Astro Boilerplate",
+      description: description,
+    }
+  }}
+  twitter={{
+    card: 'summary_large_image',
+    image: ogImage,
+    imageAlt: imageAlt,
+    title: title,
+    description: description,
+  }}
+  extend={{
+    meta: [
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+      { name: 'theme-color', content: '#000000' },
+      { name: 'author', content: 'Seu Nome/Empresa' },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'googlebot', content: 'index, follow' },
+      { property: 'og:locale', content: 'pt_BR' },
+    ],
+    link: [
+      { rel: 'icon', href: '/favicon.ico' },
+      { rel: 'canonical', href: canonicalURL },
+      { rel: 'alternate', hreflang: 'pt-BR', href: canonicalURL },
+    ],
+  }}
+/>

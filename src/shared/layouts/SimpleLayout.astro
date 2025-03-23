@@ -1,18 +1,33 @@
 ---
+import SEO from '../components/SEO.astro';
+import "../styles/global.css";
+
 export interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
-const { title = "Bem-vindo" } = Astro.props;
+const {
+  title = "Bem-vindo",
+  description = "Um boilerplate simples em Astro",
+  image,
+  imageAlt
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="defaultTheme">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content="Um boilerplate simples em Astro" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      imageAlt={imageAlt}
+    />
   </head>
   <body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6">
     <slot />

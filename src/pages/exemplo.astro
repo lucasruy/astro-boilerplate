@@ -1,0 +1,15 @@
+---
+import SimpleLayout from "../shared/layouts/SimpleLayout.astro";
+import { Button } from "../shared/components/Button/Button";
+---
+
+<SimpleLayout title="Exemplo de Botões">
+  <div class="space-y-4 p-8">
+    <Button client:load>Botão Padrão</Button>
+    <Button client:load variant="secondary">Botão Secundário</Button>
+    <Button client:load variant="accent">Botão Accent</Button>
+    <Button client:load size="lg">Botão Grande</Button>
+    <Button client:load loading>Carregando...</Button>
+    <Button client:load disabled>Desabilitado</Button>
+  </div>
+</SimpleLayout>
