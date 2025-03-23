@@ -4,7 +4,7 @@ module.exports = {
     "./src/**/*.{astro,html,js,jsx,ts,tsx}",
     "./.storybook/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: ['class', '[data-theme="dark"]'],
+  darkMode: ['class', '[data-mode="dark"]'],
   theme: {
     extend: {},
   },
