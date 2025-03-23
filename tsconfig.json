@@ -3,6 +3,13 @@
   "compilerOptions": {
     "strict": true,
     "jsx": "react-jsx",
-    "types": ["@types/react", "@types/react-dom"]
-  }
+    "jsxImportSource": "react",
+    "types": ["@types/react", "@types/react-dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*.astro", "src/**/*.tsx", "src/**/*.ts"],
+  "exclude": ["dist"]
 }

@@ -1,7 +1,7 @@
 ---
-title: "Um link qualquer"
-date: "2025-02-13"
-description: "A descrição do Um link qualquer."
+title: "Link categorizado"
+date: "2025-03-23"
+description: "A descrição de uma página categorizada."
 ---
 
 ## O que há de novo?

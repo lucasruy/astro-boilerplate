@@ -1,46 +1,101 @@
 ---
-import "../shared/styles/global.css";
-import SimpleLayout from "../shared/layouts/SimpleLayout.astro";
+import "@/shared/styles/global.css";
+import SimpleLayout from "@/shared/layouts/SimpleLayout.astro";
 ---
 
 <SimpleLayout
   title="Astro Boilerplate"
   description="Este projeto foi criado utilizando as melhores tecnologias modernas para desenvolvimento web."
 >
-  <div class="p-8">
-    <h1 class="text-3xl font-bold flex items-center gap-2 text-info">
-      Sobre este Boilerplate
-    </h1>
-    <p class="mt-4 text-lg">
-      Este projeto foi criado utilizando as melhores tecnologias modernas para desenvolvimento web.
-      A stack escolhida garante <b>desempenho, flexibilidade e escalabilidade</b>.
-    </p>
+  <section class="container mx-auto p-8">
+    <div class="text-center">
+      <h1 class="text-5xl font-extrabold text-primary">Astro Boilerplate</h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Este projeto foi criado utilizando as melhores tecnologias modernas para desenvolvimento web.
+        A stack escolhida garante <span class="font-semibold text-primary">desempenho, flexibilidade e escalabilidade</span>, permitindo entregas rápidas e eficientes.
+      </p>
+      <div class="mt-6">
+        <a href="https://github.com/lucasruy/astro-boilerplate" target="_blank" class="btn btn-primary text-lg px-6 py-3">🔗 Acesse o Repositório no GitHub</a>
+      </div>
+    </div>
 
-    <div class="mt-6">
-      <h2 class="text-2xl font-semibold text-info">Tecnologias Utilizadas</h2>
-      <ul class="mt-2 list-disc pl-5 text-lg">
-        <li><strong>Framework:</strong> Astro + React</li>
-        <li><strong>Arquitetura:</strong> Feature-Sliced Design (FSD)</li>
-        <li><strong>Linguagem:</strong> TypeScript</li>
-        <li><strong>Estilos:</strong> Tailwind CSS + DaisyUI</li>
-        <li><strong>Ícones:</strong> Lucide Icons</li>
-        <li><strong>Conteúdo:</strong> Markdown (preparado para CMS futuro)</li>
-        <li><strong>SEO:</strong> astro-seo</li>
-        <li><strong>Performance:</strong> Astro Image Optimization</li>
-        <li><strong>Gerenciamento:</strong> PNPM</li>
-        <li><strong>Deploy:</strong> Amazon S3 + CloudFront</li>
-        <li><strong>Automação:</strong> AWS CLI + GitHub Actions</li>
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold text-primary flex items-center gap-2">
+        🔧 Tecnologias Utilizadas
+      </h2>
+      <p class="mt-2 text-gray-500 text-lg">Nossa stack foi projetada para maximizar performance e produtividade:</p>
+      <ul class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-700 text-lg">
+        <li class="p-4 bg-gray-100 rounded-lg"><strong>⚡ Framework:</strong> Astro + React</li>
+        <li class="p-4 bg-gray-100 rounded-lg"><strong>🏗 Arquitetura:</strong> Feature-Sliced Design (FSD)</li>
+        <li class="p-4 bg-gray-100 rounded-lg"><strong>🛠 Linguagem:</strong> TypeScript</li>
+        <li class="p-4 bg-gray-100 rounded-lg"><strong>🎨 Estilos:</strong> Tailwind CSS + MerakiUI</li>
+        <li class="p-4 bg-gray-100 rounded-lg"><strong>✨ Ícones:</strong> Lucide Icons</li>
+        <li class="p-4 bg-gray-100 rounded-lg"><strong>📖 Conteúdo:</strong> Markdown (preparado para CMS futuro)</li>
       </ul>
     </div>
 
-    <nav class="mt-8">
-      <h2 class="text-2xl font-semibold text-info">Navegação</h2>
-      <ul class="mt-2 list-disc pl-5 text-lg">
-        <li><a href="/exemplo" class="text-info hover:underline">Página de Exemplo</a></li>
-        <li><a href="/categoria-um/um-link-qualquer" class="text-info hover:underline">Um Link Qualquer</a></li>
-        <li><a href="/primeiro-exemplo" class="text-info hover:underline">Primeiro Exemplo</a></li>
-        <li><a href="/nao-existe" class="text-info hover:underline">404</a></li>
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold text-primary">📈 Otimizações</h2>
+      <p class="mt-2 text-gray-500 text-lg">Este boilerplate inclui várias otimizações para SEO e performance:</p>
+      <ul class="mt-4 space-y-3 text-gray-700 text-lg">
+        <li>✅ Meta tags dinâmicas e SEO otimizado</li>
+        <li>✅ Code splitting para melhor performance</li>
+        <li>✅ Compressão Brotli/Gzip</li>
+        <li>✅ Cache otimizado</li>
+        <li>✅ Imagens WebP otimizadas</li>
       </ul>
-    </nav>
-  </div>
+    </div>
+
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold text-primary">🔐 Segurança</h2>
+      <p class="mt-2 text-gray-500 text-lg">Este projeto conta com boas práticas de segurança:</p>
+      <ul class="mt-4 space-y-3 text-gray-700 text-lg">
+        <li>🔒 HTTPS forçado</li>
+        <li>🔒 Headers de segurança configurados</li>
+        <li>🔒 Content Security Policy (CSP)</li>
+        <li>🔒 HSTS habilitado</li>
+      </ul>
+    </div>
+
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold text-primary">📂 Estrutura do Projeto</h2>
+      <p class="mt-2 text-gray-500 text-lg">A estrutura do projeto está organizada para facilitar o desenvolvimento:</p>
+      <pre class="mt-4 p-4 bg-gray-900 text-white rounded-lg text-sm overflow-x-auto">
+  /
+  ├── .github/             # Configurações CI/CD
+  ├── public/              # Assets estáticos
+  ├── scripts/             # Scripts de automação
+  ├── src/
+  │   ├── pages/           # Configurações de rotas e páginas
+  │   ├── shared/          # Código compartilhado
+  │   │   ├── components/  # Componentes React/Astro
+  │   │   ├── config/      # Configurações
+  │   │   ├── layouts/     # Layouts base
+  │   │   ├── styles/      # Estilos globais
+  │   │   └── utils/       # Utilitários
+  └── content/             # Conteúdo em Markdown
+      </pre>
+    </div>
+
+    <div class="mt-10">
+      <h2 class="text-3xl font-bold text-primary">🤝 Contribuindo</h2>
+      <p class="mt-2 text-gray-500 text-lg">Quer contribuir com este projeto? Veja como começar:</p>
+      <ul class="mt-4 space-y-3 text-gray-700 text-lg">
+        <li>1️⃣ Faça um fork do repositório</li>
+        <li>2️⃣ Crie sua branch <code>feature/minha-feature</code></li>
+        <li>3️⃣ Faça suas alterações e commit</li>
+        <li>4️⃣ Envie um pull request 🚀</li>
+      </ul>
+    </div>
+
+    <div class="m-12 text-center">
+      <h2 class="text-3xl font-bold text-primary">🌐 Navegação</h2>
+      <p class="mt-2 text-lg text-gray-500">Acesse algumas páginas de exemplo do projeto:</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-6">
+        <a href="/primeiro-exemplo" class="btn btn-secondary text-lg px-6 py-3">🔗 Primeiro Exemplo</a>
+        <a href="/grupo-de-links/link-categorizado" class="btn btn-primary text-lg px-6 py-3">🔗 Link Categorizado</a>
+        <a href="/nao-existe" class="btn btn-error text-lg px-6 py-3">⚠️ 404</a>
+      </div>
+    </div>
+  </section>
 </SimpleLayout>
